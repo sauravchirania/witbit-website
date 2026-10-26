@@ -3,157 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Witbit Labs — AI & Automation for Business</title>
-  <meta name="description" content="Witbit Labs helps businesses automate workflows with AI and custom software. Save time, cut costs, and scale faster." />
+  <title>Witbit Labs — AI Workflow Automation Studio</title>
+  <meta name="description" content="Witbit Labs is an AI-native automation studio. We help businesses automate workflows with AI agents, integrations and custom software." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Chivo+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='%23f5f5f5'>W</text></svg>" />
 </head>
 <body>
-  <header class="nav">
+
+  <header class="nav" id="nav">
     <div class="container nav-inner">
-      <a href="/" class="logo"><span class="logo-mark">⚡</span> Witbit Labs</a>
+      <a href="/" class="logo"><span class="logo-box">W</span> Witbit Labs</a>
       <nav class="nav-links">
         <a href="#services">Services</a>
-        <a href="#how">How it works</a>
-        <a href="#why">Why us</a>
-        <a href="#contact" class="btn btn-sm">Get in touch</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="nav-cta">Contact ↗</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <!-- INTRO -->
+    <section class="intro">
       <div class="container">
-        <p class="badge">AI-powered business automation</p>
-        <h1>Automate the busywork.<br /><span class="grad">Focus on growth.</span></h1>
-        <p class="sub">
-          Witbit Labs builds AI-driven workflows and custom software that eliminate
-          repetitive tasks, connect your tools, and help your business move faster —
-          without adding headcount.
-        </p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Book a free consultation</a>
-          <a href="#services" class="btn btn-ghost">See what we do →</a>
+        <div class="intro-meta mono">
+          <span>You are<br />now<br />entering</span>
+          <span class="intro-meta-right">© 2026<br />Witbit Labs<br />witbitlabs.com</span>
+        </div>
+        <h1 class="intro-title">Witbit<br />Labs</h1>
+        <div class="intro-bottom mono">
+          <span>AI-native workflow<br />automation studio</span>
+          <span class="scroll-cue">Scroll<br />to explore ↓</span>
         </div>
       </div>
     </section>
 
+    <!-- MARQUEE -->
+    <section class="marquee-section">
+      <p class="mono marquee-label">// we build with</p>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>OpenAI</span><span>Anthropic</span><span>n8n</span><span>LangChain</span><span>Python</span><span>TypeScript</span><span>React</span><span>PostgreSQL</span><span>Cloudflare</span><span>Supabase</span><span>Zapier</span><span>HubSpot</span>
+          <span>OpenAI</span><span>Anthropic</span><span>n8n</span><span>LangChain</span><span>Python</span><span>TypeScript</span><span>React</span><span>PostgreSQL</span><span>Cloudflare</span><span>Supabase</span><span>Zapier</span><span>HubSpot</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATEMENTS -->
+    <section class="statements">
+      <div class="container">
+        <h2 class="statement reveal">We help businesses<br />become <em>AI-native</em></h2>
+        <h2 class="statement reveal">Not as vendors,<br />but like an in-house team</h2>
+        <h2 class="statement reveal">Working software in weeks,<br />not months</h2>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
     <section id="services" class="section">
       <div class="container">
-        <h2>What we do</h2>
-        <p class="section-sub">End-to-end automation, from idea to production.</p>
-        <div class="grid">
-          <article class="card">
-            <div class="card-icon">🤖</div>
-            <h3>AI Workflow Automation</h3>
-            <p>Replace manual, repetitive processes with intelligent agents that handle data entry, approvals, email triage, reporting, and more.</p>
+        <div class="section-head mono">
+          <span>{ services }</span>
+          <span>witbit / what we do</span>
+        </div>
+        <div class="service-list">
+          <article class="service reveal">
+            <span class="service-num mono">01</span>
+            <div class="service-body">
+              <h3>AI Workflow Automation</h3>
+              <p>Replace manual, repetitive processes with intelligent agents — email triage, approvals, data entry, reporting — that run 24/7 without supervision.</p>
+            </div>
+            <span class="service-tag mono">agents</span>
           </article>
-          <article class="card">
-            <div class="card-icon">🔗</div>
-            <h3>System Integrations</h3>
-            <p>Connect your CRM, ERP, spreadsheets, email, and third-party APIs so information flows automatically between the tools you already use.</p>
+          <article class="service reveal">
+            <span class="service-num mono">02</span>
+            <div class="service-body">
+              <h3>System Integrations</h3>
+              <p>Connect your CRM, ERP, spreadsheets, email and third-party APIs so data flows automatically between the tools you already use.</p>
+            </div>
+            <span class="service-tag mono">api</span>
           </article>
-          <article class="card">
-            <div class="card-icon">🛠️</div>
-            <h3>Custom Software & Tools</h3>
-            <p>Dashboards, internal tools, and web apps tailored to your operations — built quickly with modern, AI-assisted engineering.</p>
+          <article class="service reveal">
+            <span class="service-num mono">03</span>
+            <div class="service-body">
+              <h3>Custom Software &amp; Internal Tools</h3>
+              <p>Dashboards, portals and web apps tailored to your operations — engineered fast with modern, AI-assisted development.</p>
+            </div>
+            <span class="service-tag mono">build</span>
           </article>
-          <article class="card">
-            <div class="card-icon">📊</div>
-            <h3>Data & Reporting</h3>
-            <p>Automated pipelines that collect, clean, and visualize your business data so you can make decisions with real numbers, not guesswork.</p>
+          <article class="service reveal">
+            <span class="service-num mono">04</span>
+            <div class="service-body">
+              <h3>AI Assistants &amp; Chatbots</h3>
+              <p>Assistants trained on your business knowledge to support your team and customers around the clock — across web, email and WhatsApp.</p>
+            </div>
+            <span class="service-tag mono">support</span>
           </article>
-          <article class="card">
-            <div class="card-icon">💬</div>
-            <h3>AI Assistants & Chatbots</h3>
-            <p>Custom AI assistants trained on your business knowledge to support your team and customers 24/7.</p>
+          <article class="service reveal">
+            <span class="service-num mono">05</span>
+            <div class="service-body">
+              <h3>Data &amp; Reporting Pipelines</h3>
+              <p>Automated pipelines that collect, clean and visualise your business data, so decisions are made with real numbers instead of guesswork.</p>
+            </div>
+            <span class="service-tag mono">data</span>
           </article>
-          <article class="card">
-            <div class="card-icon">⚡</div>
-            <h3>Process Consulting</h3>
-            <p>We audit your workflows, find the biggest time sinks, and map out exactly where automation will deliver the highest ROI.</p>
+          <article class="service reveal">
+            <span class="service-num mono">06</span>
+            <div class="service-body">
+              <h3>Process Consulting</h3>
+              <p>We audit your workflows, find the biggest time sinks, and map exactly where automation delivers the highest return.</p>
+            </div>
+            <span class="service-tag mono">strategy</span>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="how" class="section section-alt">
+    <!-- PROCESS -->
+    <section id="process" class="section section-border">
       <div class="container">
-        <h2>How it works</h2>
-        <p class="section-sub">From first call to live automation — typically in weeks, not months.</p>
-        <div class="steps">
-          <div class="step">
-            <span class="step-num">1</span>
+        <div class="section-head mono">
+          <span>{ process }</span>
+          <span>witbit / how it works</span>
+        </div>
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <span class="mono process-num">01</span>
             <h3>Discover</h3>
-            <p>We learn your business, map your workflows, and identify the highest-impact automation opportunities.</p>
+            <p>We learn your business, map your workflows and identify the highest-impact automation opportunities.</p>
           </div>
-          <div class="step">
-            <span class="step-num">2</span>
+          <div class="process-step reveal">
+            <span class="mono process-num">02</span>
             <h3>Build</h3>
-            <p>We design and implement the automation, integrating with your existing tools and systems.</p>
+            <p>We design and implement the automation, integrating cleanly with your existing tools and systems.</p>
           </div>
-          <div class="step">
-            <span class="step-num">3</span>
+          <div class="process-step reveal">
+            <span class="mono process-num">03</span>
             <h3>Launch</h3>
-            <p>We test thoroughly, roll out to your team, and make sure everything runs smoothly in production.</p>
+            <p>We test thoroughly, roll out to your team and make sure everything runs reliably in production.</p>
           </div>
-          <div class="step">
-            <span class="step-num">4</span>
+          <div class="process-step reveal">
+            <span class="mono process-num">04</span>
             <h3>Optimize</h3>
-            <p>We monitor results, fine-tune performance, and keep improving as your business grows.</p>
+            <p>We monitor results, fine-tune performance and keep improving as your business grows.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="why" class="section">
+    <!-- FAQ -->
+    <section id="faq" class="section section-border">
       <div class="container">
-        <h2>Why Witbit Labs</h2>
-        <div class="why-grid">
-          <div class="why-item">
-            <h3>⏱️ Save hours every week</h3>
-            <p>Free your team from manual work so they can focus on what actually grows the business.</p>
+        <div class="section-head mono">
+          <span>{ faq }</span>
+          <span>witbit / support</span>
+        </div>
+        <div class="faq-layout">
+          <div class="faq-intro">
+            <h2>Frequently<br />asked questions</h2>
+            <p>Got questions? We've got answers. If you don't find what you're looking for, feel free to reach out.</p>
           </div>
-          <div class="why-item">
-            <h3>💰 Reduce operating costs</h3>
-            <p>Automation does the work of entire processes — without the overhead of hiring.</p>
-          </div>
-          <div class="why-item">
-            <h3>🎯 Built for your business</h3>
-            <p>No generic templates. Every solution is tailored to how you actually work.</p>
-          </div>
-          <div class="why-item">
-            <h3>🤝 Hands-on partnership</h3>
-            <p>We don't just deliver and disappear — we stay involved to keep things running and improving.</p>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary><span class="mono faq-num">01</span> What does Witbit Labs actually do?<span class="faq-icon">+</span></summary>
+              <div class="faq-answer"><p>We build AI-powered automations and custom software for businesses. That means replacing repetitive manual work with AI agents, connecting your disconnected tools, and building the internal tools your team needs — end to end, from idea to production.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary><span class="mono faq-num">02</span> How is this different from hiring developers?<span class="faq-icon">+</span></summary>
+              <div class="faq-answer"><p>You get a small, senior team that thinks in AI natively — no layers of project managers, no multi-month procurement. We ship working prototypes within days and production systems in weeks, and we stay involved after launch to keep improving results.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary><span class="mono faq-num">03</span> What kinds of processes can be automated?<span class="faq-icon">+</span></summary>
+              <div class="faq-answer"><p>Anything rule-based or repetitive: invoice and document processing, lead qualification, customer support, reporting, inventory updates, appointment scheduling, CRM hygiene, email workflows, and more. If your team does it more than twice a week, it's probably automatable.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary><span class="mono faq-num">04</span> How long does a project take?<span class="faq-icon">+</span></summary>
+              <div class="faq-answer"><p>Focused automations: 1–2 weeks. Web apps and MVPs: 4–6 weeks. Complex, multi-system platforms: 8–12 weeks. You'll see working software at every stage — never a black box.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary><span class="mono faq-num">05</span> Do you work with our existing tools?<span class="faq-icon">+</span></summary>
+              <div class="faq-answer"><p>Yes. We integrate with what you already use — HubSpot, Salesforce, Zoho, Slack, Google Workspace, Airtable, spreadsheets, email, WhatsApp and virtually any tool with an API. No forced migrations.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary><span class="mono faq-num">06</span> What happens after launch?<span class="faq-icon">+</span></summary>
+              <div class="faq-answer"><p>We monitor, maintain and extend. Most clients start with a build engagement and continue on a monthly retainer for support, new automations and continuous optimization.</p></div>
+            </details>
+            <details class="faq-item">
+              <summary><span class="mono faq-num">07</span> How do we get started?<span class="faq-icon">+</span></summary>
+              <div class="faq-answer"><p>Send us a message below or email hello@witbitlabs.com. We'll schedule a free 30-minute discovery call to understand your workflows and outline quick wins — no lengthy sales cycles.</p></div>
+            </details>
+            <span class="mono faq-end">// end of section</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section cta-section">
-      <div class="container cta-box">
-        <h2>Ready to automate your business?</h2>
-        <p>Get a free consultation. We'll identify quick wins and show you exactly how AI can save your team time and money.</p>
-        <form class="contact-form" id="contact-form">
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="Work email" required />
+    <!-- CONTACT -->
+    <section id="contact" class="section section-border">
+      <div class="container">
+        <div class="section-head mono">
+          <span>{ contact }</span>
+          <span>witbit / start a project</span>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-copy">
+            <h2>Let's automate<br />your business.</h2>
+            <p>Tell us what's eating your team's time. We'll show you exactly how AI can eliminate it — free 30-minute discovery call, no strings attached.</p>
+            <a class="contact-email mono" href="mailto:hello@witbitlabs.com">hello@witbitlabs.com ↗</a>
           </div>
-          <textarea name="message" rows="3" placeholder="What would you like to automate?"></textarea>
-          <button type="submit" class="btn btn-primary btn-block">Send message</button>
-        </form>
-        <p class="form-note">Or email us directly at <a href="mailto:hello@witbitlabs.com">hello@witbitlabs.com</a></p>
+          <form class="contact-form" id="contact-form">
+            <div class="field">
+              <label class="mono" for="name">01 / your name</label>
+              <input id="name" type="text" name="name" placeholder="Jane Doe" required />
+            </div>
+            <div class="field">
+              <label class="mono" for="email">02 / work email</label>
+              <input id="email" type="email" name="email" placeholder="jane@company.com" required />
+            </div>
+            <div class="field">
+              <label class="mono" for="message">03 / what would you like to automate?</label>
+              <textarea id="message" name="message" rows="4" placeholder="We spend 10 hours a week on..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send message <span>↗</span></button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Witbit Labs. All rights reserved.</p>
-      <p><a href="mailto:hello@witbitlabs.com">hello@witbitlabs.com</a></p>
+    <div class="container">
+      <div class="footer-top">
+        <a href="/" class="logo"><span class="logo-box">W</span> Witbit Labs</a>
+        <div class="footer-links mono">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom mono">
+        <span>© 2026 Witbit Labs · All rights reserved</span>
+        <a href="mailto:hello@witbitlabs.com">hello@witbitlabs.com</a>
+      </div>
     </div>
   </footer>
 
