@@ -1,0 +1,14 @@
+{
+  "name": "witbit-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Witbit Labs marketing website, deployed on Cloudflare Workers",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
