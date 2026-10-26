@@ -1,6 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "witbit-labs",
+  "routes": [
+    { "pattern": "witbitlabs.com", "custom_domain": true },
+    { "pattern": "www.witbitlabs.com", "custom_domain": true }
+  ],
   "main": "src/index.js",
   "compatibility_date": "2025-10-01",
   "assets": {
