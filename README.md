@@ -7,6 +7,20 @@ Marketing website for [witbitlabs.com](https://witbitlabs.com), deployed on **Cl
 - Static HTML/CSS/JS in `public/`
 - Cloudflare Worker in `src/index.js` (serves assets + `/api/contact`)
 - Config: `wrangler.jsonc`
+- Case-studies brochure PDF served at `/case-studies.pdf` (generated, see below)
+
+## Case studies PDF
+
+The brochure at [witbitlabs.com/case-studies.pdf](https://witbitlabs.com/case-studies.pdf) is generated
+from `tools/case-studies.html` (styled like the site — Space Grotesk + Chivo Mono, monochrome):
+
+```bash
+npm run pdf    # regenerates public/case-studies.pdf via Playwright/Chromium
+```
+
+Requires Playwright's Chromium (`npx playwright install chromium`). On machines without system libs
+for Chromium (no sudo), unpack the needed debs locally and run with `LD_LIBRARY_PATH` set:
+`libasound2 libgbm1 libnspr4 libnss3 libwayland-server0`.
 
 ## Local development
 

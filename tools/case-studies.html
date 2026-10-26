@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Witbit Labs — Case Studies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Chivo+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #111;
+    --fg: #f5f5f5;
+    --muted: #9a9a9a;
+    --dim: #4a4a4a;
+    --border: #2a2a2a;
+    --card: #1a1a1a;
+    --sans: "Space Grotesk", sans-serif;
+    --mono: "Chivo Mono", monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body { background: var(--bg); color: var(--fg); font-family: var(--sans); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .page {
+    width: 210mm; height: 297mm;
+    padding: 16mm 18mm 14mm;
+    position: relative;
+    display: flex; flex-direction: column;
+    page-break-after: always;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .mono { font-family: var(--mono); font-weight: 300; }
+  .up { text-transform: uppercase; }
+  .ls { letter-spacing: 0.34em; }
+  .muted { color: var(--muted); }
+  .dim { color: var(--dim); }
+  em { font-style: normal; color: var(--muted); }
+
+  /* header / footer */
+  .p-head {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 6.5pt; font-weight: 300;
+    letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted);
+    padding-bottom: 6mm;
+  }
+  .p-foot {
+    margin-top: auto;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-family: var(--mono); font-size: 6.5pt; font-weight: 300;
+    letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted);
+    padding-top: 6mm;
+  }
+  .p-foot .num { font-size: 8pt; letter-spacing: 0.1em; color: var(--fg); }
+
+  .rule { border: none; border-top: 1px solid var(--border); }
+
+  /* ---------- COVER ---------- */
+  .cover { justify-content: space-between; padding: 16mm 18mm; }
+  .cover-meta {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 7pt; font-weight: 300;
+    letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted);
+    line-height: 2.1;
+  }
+  .cover-meta .right { text-align: right; }
+  .cover-title {
+    font-size: 128pt; font-weight: 700; letter-spacing: -0.045em;
+    line-height: 0.88; text-align: center;
+  }
+  .cover-sub {
+    text-align: center; font-family: var(--mono); font-weight: 300;
+    font-size: 8pt; letter-spacing: 0.5em; text-transform: uppercase;
+    color: var(--muted); margin-top: 8mm;
+  }
+
+  /* ---------- SECTION LABELS ---------- */
+  .kicker {
+    font-family: var(--mono); font-size: 7pt; font-weight: 300;
+    letter-spacing: 0.34em; text-transform: uppercase; color: var(--muted);
+    margin-bottom: 5mm;
+  }
+  .kicker b { font-weight: 300; color: var(--fg); }
+  h1.big { font-size: 44pt; font-weight: 600; letter-spacing: -0.03em; line-height: 1.02; }
+  h2.mid { font-size: 30pt; font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; }
+  .lede { font-size: 11.5pt; line-height: 1.65; color: var(--muted); max-width: 150mm; }
+  .lede strong { color: var(--fg); font-weight: 500; }
+
+  /* ---------- STATS ---------- */
+  .stat-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--border); border-left: 1px solid var(--border);
+    margin-top: 10mm;
+  }
+  .stat {
+    border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 9mm 8mm;
+  }
+  .stat .k { font-family: var(--mono); font-size: 6.5pt; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
+  .stat .v { font-size: 34pt; font-weight: 600; letter-spacing: -0.03em; margin-top: 3mm; }
+  .stat .n { font-size: 8.5pt; color: var(--muted); margin-top: 2mm; }
+
+  /* ---------- INDEX ---------- */
+  .index-list { margin-top: 8mm; border-top: 1px solid var(--border); }
+  .index-row {
+    display: grid; grid-template-columns: 14mm 1fr auto;
+    gap: 6mm; align-items: baseline;
+    padding: 6.5mm 0; border-bottom: 1px solid var(--border);
+  }
+  .index-row .no { font-family: var(--mono); font-size: 8pt; font-weight: 300; color: var(--muted); }
+  .index-row .t { font-size: 17pt; font-weight: 600; letter-spacing: -0.02em; }
+  .index-row .d { font-size: 9pt; color: var(--muted); margin-top: 1mm; max-width: 120mm; }
+  .index-row .tag { font-family: var(--mono); font-size: 6.5pt; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); }
+
+  /* ---------- SECTION DIVIDER ---------- */
+  .divider { justify-content: center; }
+  .divider .sec-no {
+    font-family: var(--mono); font-size: 8pt; font-weight: 300;
+    letter-spacing: 0.5em; text-transform: uppercase; color: var(--muted);
+    margin-bottom: 8mm;
+  }
+  .divider h1 { font-size: 62pt; font-weight: 700; letter-spacing: -0.04em; line-height: 0.95; }
+  .divider .cat-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 4mm 10mm;
+    margin-top: 14mm; max-width: 140mm;
+  }
+  .divider .cat {
+    font-family: var(--mono); font-size: 7.5pt; font-weight: 300;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); padding-bottom: 3mm;
+  }
+  .divider .cat b { color: var(--fg); font-weight: 300; }
+
+  /* ---------- CASE STUDY ---------- */
+  .case-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7mm; }
+  .case-cat {
+    font-family: var(--mono); font-size: 7pt; font-weight: 300;
+    letter-spacing: 0.34em; text-transform: uppercase; color: var(--muted);
+  }
+  .case-title { font-size: 34pt; font-weight: 600; letter-spacing: -0.03em; line-height: 1.03; }
+  .case-desc { font-size: 11pt; line-height: 1.6; color: var(--muted); margin-top: 4mm; max-width: 155mm; }
+  .case-meta {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4mm;
+    margin-top: 7mm; padding: 5mm 0;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  }
+  .case-meta .item .k { font-family: var(--mono); font-size: 6.5pt; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
+  .case-meta .item .v { font-size: 10pt; margin-top: 1.5mm; }
+  .chips { display: flex; flex-wrap: wrap; gap: 3mm; margin-top: 6mm; }
+  .chip {
+    font-family: var(--mono); font-size: 6.5pt; font-weight: 300;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+    border: 1px solid var(--border); padding: 2mm 3.5mm; border-radius: 100px;
+  }
+
+  /* flow diagram */
+  .flow-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; margin-top: 8mm; }
+  .flow { display: flex; flex-direction: column; align-items: stretch; }
+  .flow-cap { font-family: var(--mono); font-size: 6.5pt; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dim); margin-bottom: 3mm; }
+  .node {
+    background: var(--card); border: 1px solid var(--border);
+    padding: 4mm 5mm;
+  }
+  .node .nt { font-size: 9.5pt; font-weight: 600; letter-spacing: -0.01em; }
+  .node .ns { font-size: 7.5pt; color: var(--muted); margin-top: 1mm; }
+  .arrow { text-align: center; color: var(--dim); font-size: 9pt; padding: 1.8mm 0; }
+
+  .results { margin-top: 8mm; }
+  .results-cap { font-family: var(--mono); font-size: 6.5pt; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 4mm; }
+  .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .result {
+    border: 1px solid var(--border); padding: 5mm;
+  }
+  .result .rv { font-size: 17pt; font-weight: 600; letter-spacing: -0.02em; }
+  .result .rl { font-family: var(--mono); font-size: 6.5pt; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 2mm; line-height: 1.7; }
+
+  .case-body { font-size: 9.5pt; line-height: 1.65; color: var(--muted); margin-top: 7mm; }
+  .case-body p + p { margin-top: 3mm; }
+  .case-body strong { color: var(--fg); font-weight: 500; }
+
+  /* ---------- CLOSING ---------- */
+  .close { justify-content: space-between; }
+  .close h1 { font-size: 54pt; font-weight: 700; letter-spacing: -0.04em; line-height: 0.97; }
+  .close .lede { margin-top: 8mm; }
+  .close-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; margin-top: 12mm; }
+  .close-block { border-top: 1px solid var(--border); padding-top: 5mm; }
+  .close-block .k { font-family: var(--mono); font-size: 6.5pt; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 3mm; }
+  .close-block .v { font-size: 12pt; font-weight: 500; line-height: 1.8; }
+  .close-block .v span { color: var(--muted); font-weight: 400; }
+</style>
+</head>
+<body>
+
+<!-- 01 · COVER -->
+<section class="page cover">
+  <div class="cover-meta">
+    <span>AI-native<br />workflow automation<br />studio</span>
+    <span class="right">Case studies<br />© 2026<br />Witbit Labs</span>
+  </div>
+  <div>
+    <div class="cover-title">Witbit<br />Labs</div>
+    <div class="cover-sub">// selected case studies · 01 — 04</div>
+  </div>
+  <div class="cover-meta">
+    <span>AI agents<br />integrations<br />custom software</span>
+    <span class="right">witbitlabs<br />.com</span>
+  </div>
+</section>
+
+<!-- 02 · CONCEPT -->
+<section class="page">
+  <div class="p-head"><span>Witbit Labs / case studies</span><span>02</span></div>
+  <div class="kicker">[ The concept ]</div>
+  <h1 class="big">What is<br />Witbit Labs?</h1>
+  <p class="lede" style="margin-top: 8mm;">
+    Witbit Labs is an <strong>AI-native automation studio</strong>. We build the systems that remove
+    repetitive work from businesses — AI agents, system integrations, data pipelines and custom
+    software — shipped by a small senior team that thinks in AI natively, not retrofitting it.
+  </p>
+  <p class="lede" style="margin-top: 6mm;">
+    We work <strong>like an in-house team, not as vendors</strong>: discovery in days, working software
+    in weeks, and continuous optimization after launch. The following pages document four things we
+    built — for a German-language news operation, a 800K-follower creator, a SaaS learning product,
+    and an influencer marketing agency.
+  </p>
+  <div class="stat-grid">
+    <div class="stat"><div class="k">Case studies</div><div class="v">04</div><div class="n">Products, creators and agencies</div></div>
+    <div class="stat"><div class="k">Products live</div><div class="v">02</div><div class="n">faktenblitz.com · execello.com</div></div>
+    <div class="stat"><div class="k">Audience supported</div><div class="v">800K+</div><div class="n">Instagram followers (creator ops)</div></div>
+    <div class="stat"><div class="k">Languages shipped</div><div class="v">02</div><div class="n">English &amp; German production systems</div></div>
+  </div>
+  <div class="p-foot"><span>Witbitlabs.com</span><span class="num">02</span></div>
+</section>
+
+<!-- 03 · INDEX -->
+<section class="page">
+  <div class="p-head"><span>Witbit Labs / case studies</span><span>03</span></div>
+  <div class="kicker">[ Case studies ]</div>
+  <h1 class="big">Four builds,<br />documented.</h1>
+  <div class="index-list">
+    <div class="index-row">
+      <span class="no">01</span>
+      <div><div class="t">FaktenBlitz</div><div class="d">German-language world news site running an automated AI reporting pipeline, publishing at scale with hundreds of monthly visitors.</div></div>
+      <span class="tag">Media</span>
+    </div>
+    <div class="index-row">
+      <span class="no">02</span>
+      <div><div class="t">Adithya Nataraj</div><div class="d">Workflow automation for a health &amp; fitness creator with 800K+ Instagram followers — content ops, triage and reporting on autopilot.</div></div>
+      <span class="tag">Creator</span>
+    </div>
+    <div class="index-row">
+      <span class="no">03</span>
+      <div><div class="t">Execello</div><div class="d">A SaaS learning product: role-specific, 30-second professional lessons delivered by email every workday, generated and shipped automatically.</div></div>
+      <span class="tag">SaaS</span>
+    </div>
+    <div class="index-row">
+      <span class="no">04</span>
+      <div><div class="t">EchoX Media</div><div class="d">Deal-intelligence tooling for an influencer marketing agency — surfacing creators and companies with live campaigns for better matchmaking.</div></div>
+      <span class="tag">Marketing</span>
+    </div>
+  </div>
+  <div class="p-foot"><span>Witbitlabs.com</span><span class="num">03</span></div>
+</section>
+
+<!-- 04 · DIVIDER -->
+<section class="page divider">
+  <div class="p-head"><span>Witbit Labs / case studies</span><span>04</span></div>
+  <div style="margin-top: auto; margin-bottom: auto;">
+    <div class="sec-no">[ Section 01 ]</div>
+    <h1>Case<br />Studies</h1>
+    <div class="cat-grid">
+      <div class="cat"><b>01</b> &nbsp; FaktenBlitz</div>
+      <div class="cat"><b>02</b> &nbsp; Adithya Nataraj</div>
+      <div class="cat"><b>03</b> &nbsp; Execello</div>
+      <div class="cat"><b>04</b> &nbsp; EchoX Media</div>
+    </div>
+  </div>
+  <div class="p-foot"><span>Witbitlabs.com</span><span class="num">04</span></div>
+</section>
+
+<!-- 05 · FAKTENBLITZ -->
+<section class="page">
+  <div class="p-head"><span>Witbit Labs / case studies</span><span>05</span></div>
+  <div class="case-cat">01 / Media / FaktenBlitz</div>
+  <div class="case-head" style="margin-top: 5mm;">
+    <div class="case-title">FaktenBlitz</div>
+  </div>
+  <div class="case-desc">
+    An automated German-language world news operation: global stories gathered, summarised and
+    published in German across categories — around the clock, without a newsroom.
+  </div>
+  <div class="case-meta">
+    <div class="item"><div class="k">Client</div><div class="v">faktenblitz.com — Witbit Labs product</div></div>
+    <div class="item"><div class="k">Scope</div><div class="v">AI publishing pipeline · full-stack build · SEO</div></div>
+  </div>
+  <div class="chips">
+    <span class="chip">News media</span><span class="chip">AI publishing</span><span class="chip">German</span>
+    <span class="chip">Content automation</span><span class="chip">SEO</span><span class="chip">RSS</span>
+  </div>
+  <div class="flow-wrap">
+    <div class="flow">
+      <div class="flow-cap">Publishing pipeline</div>
+      <div class="node"><div class="nt">Global sources</div><div class="ns">international wires &amp; feeds</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">AI summarisation</div><div class="ns">rewrite &amp; translate into German</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Editorial rules</div><div class="ns">categories, headlines, fact length</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Publish</div><div class="ns">articles · archive · RSS feed</div></div>
+    </div>
+    <div class="flow">
+      <div class="flow-cap">Growth engine</div>
+      <div class="node"><div class="nt">Category taxonomy</div><div class="ns">Politik · Wirtschaft · Technik · Sport · Welt…</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Search-optimised pages</div><div class="ns">indexable archive across 300+ pages</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Continuous indexing</div><div class="ns">new stories added around the clock</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Readers</div><div class="ns">hundreds of monthly visitors, growing</div></div>
+    </div>
+  </div>
+  <div class="results">
+    <div class="results-cap">Results</div>
+    <div class="result-grid">
+      <div class="result"><div class="rv">100s</div><div class="rl">Monthly visitors<br />and growing</div></div>
+      <div class="result"><div class="rv">24/7</div><div class="rl">Automated publishing<br />without a newsroom</div></div>
+      <div class="result"><div class="rv">300+</div><div class="rl">Archive pages<br />of indexed coverage</div></div>
+    </div>
+  </div>
+  <div class="case-body">
+    <p><strong>The outcome:</strong> a fully autonomous, German-language news property — every article is
+    sourced, written, categorised and published by the pipeline — proving that AI operations can run
+    a media brand end to end.</p>
+  </div>
+  <div class="p-foot"><span>Witbitlabs.com</span><span class="num">05</span></div>
+</section>
+
+<!-- 06 · ADITHYA -->
+<section class="page">
+  <div class="p-head"><span>Witbit Labs / case studies</span><span>06</span></div>
+  <div class="case-cat">02 / Creator / Adithya Nataraj</div>
+  <div class="case-head" style="margin-top: 5mm;">
+    <div class="case-title">Adithya Nataraj</div>
+  </div>
+  <div class="case-desc">
+    Workflow automation for Adithya Nataraj (@learnwithadithya), a health &amp; fitness creator with
+    800K+ followers — turning a manual creator operation into a system that runs itself.
+  </div>
+  <div class="case-meta">
+    <div class="item"><div class="k">Client</div><div class="v">Adithya Nataraj · 800K+ on Instagram</div></div>
+    <div class="item"><div class="k">Scope</div><div class="v">Content ops · triage · reporting automation</div></div>
+  </div>
+  <div class="chips">
+    <span class="chip">Influencer ops</span><span class="chip">Instagram</span><span class="chip">Automation</span>
+    <span class="chip">Content pipeline</span><span class="chip">Community</span>
+  </div>
+  <div class="flow-wrap">
+    <div class="flow">
+      <div class="flow-cap">Daily operations</div>
+      <div class="node"><div class="nt">Incoming signals</div><div class="ns">DMs · comments · brand inquiries</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">AI triage</div><div class="ns">classify, route &amp; draft replies</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Human-in-the-loop</div><div class="ns">approve what matters, skip the rest</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Logged &amp; tracked</div><div class="ns">every inquiry captured, nothing lost</div></div>
+    </div>
+    <div class="flow">
+      <div class="flow-cap">Content &amp; reporting</div>
+      <div class="node"><div class="nt">Content calendar</div><div class="ns">planned posts &amp; reminders</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Performance pull</div><div class="ns">views, engagement &amp; reach collected</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Automated reports</div><div class="ns">brand-ready summaries on schedule</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Team time freed</div><div class="ns">focus shifts to creating, not admin</div></div>
+    </div>
+  </div>
+  <div class="results">
+    <div class="results-cap">Results</div>
+    <div class="result-grid">
+      <div class="result"><div class="rv">800K+</div><div class="rl">Follower audience<br />run on systems</div></div>
+      <div class="result"><div class="rv">0</div><div class="rl">Inquiries lost<br />auto-captured &amp; routed</div></div>
+      <div class="result"><div class="rv">Weekly</div><div class="rl">Reports generated<br />without manual work</div></div>
+    </div>
+  </div>
+  <div class="case-body">
+    <p><strong>The outcome:</strong> a creator business operating like a media company — inquiries triaged
+    automatically, reports ready for brand partners, and the founder's hours returned to content
+    instead of inbox admin.</p>
+  </div>
+  <div class="p-foot"><span>Witbitlabs.com</span><span class="num">06</span></div>
+</section>
+
+<!-- 07 · EXECELLO -->
+<section class="page">
+  <div class="p-head"><span>Witbit Labs / case studies</span><span>07</span></div>
+  <div class="case-cat">03 / SaaS / Execello</div>
+  <div class="case-head" style="margin-top: 5mm;">
+    <div class="case-title">Execello</div>
+  </div>
+  <div class="case-desc">
+    Continuous professional learning for teams: short, role-specific lessons that arrive by email
+    every workday and take under 30 seconds to read — designed, built and operated by Witbit Labs.
+  </div>
+  <div class="case-meta">
+    <div class="item"><div class="k">Client</div><div class="v">execello.com — Witbit Labs product</div></div>
+    <div class="item"><div class="k">Scope</div><div class="v">Product design · AI lesson generation · delivery</div></div>
+  </div>
+  <div class="chips">
+    <span class="chip">SaaS</span><span class="chip">Email delivery</span><span class="chip">AI generation</span>
+    <span class="chip">Role-based content</span><span class="chip">EdTech</span>
+  </div>
+  <div class="flow-wrap">
+    <div class="flow">
+      <div class="flow-cap">Lesson pipeline</div>
+      <div class="node"><div class="nt">Role &amp; seniority</div><div class="ns">engineering · product · sales · legal · finance</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">AI generates lesson</div><div class="ns">one useful idea, 30-second read</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Quality gate</div><div class="ns">accuracy, relevance, tone checks</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Scheduled send</div><div class="ns">every workday, per employee</div></div>
+    </div>
+    <div class="flow">
+      <div class="flow-cap">Business engine</div>
+      <div class="node"><div class="nt">Team onboarding</div><div class="ns">invite employees by role &amp; function</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Compounding library</div><div class="ns">hundreds of lessons accumulate</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">30-day pilots</div><div class="ns">20–50 employees at $1 / employee / month</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Scale</div><div class="ns">whole-company rollout</div></div>
+    </div>
+  </div>
+  <div class="results">
+    <div class="results-cap">Results</div>
+    <div class="result-grid">
+      <div class="result"><div class="rv">&lt;30s</div><div class="rl">Daily lesson<br />fit into the workday</div></div>
+      <div class="result"><div class="rv">6</div><div class="rl">Departments served<br />by role-specific content</div></div>
+      <div class="result"><div class="rv">$1</div><div class="rl">Per employee / month<br />live pricing, pilots open</div></div>
+    </div>
+  </div>
+  <div class="case-body">
+    <p><strong>The outcome:</strong> a working SaaS business — pricing, landing pages, pilot funnel and the
+    entire content supply chain automated — from an idea to a live product where employees actually
+    read the training.</p>
+  </div>
+  <div class="p-foot"><span>Witbitlabs.com</span><span class="num">07</span></div>
+</section>
+
+<!-- 08 · ECHOX -->
+<section class="page">
+  <div class="p-head"><span>Witbit Labs / case studies</span><span>08</span></div>
+  <div class="case-cat">04 / Marketing / EchoX Media</div>
+  <div class="case-head" style="margin-top: 5mm;">
+    <div class="case-title">EchoX Media</div>
+  </div>
+  <div class="case-desc">
+    Deal-intelligence tooling for an influencer marketing agency — surfacing which creators to pitch
+    and which companies are actively running campaigns, so outreach lands where the deals are.
+  </div>
+  <div class="case-meta">
+    <div class="item"><div class="k">Client</div><div class="v">EchoX Media · influencer marketing agency</div></div>
+    <div class="item"><div class="k">Scope</div><div class="v">Deal discovery · creator matching · outreach intel</div></div>
+  </div>
+  <div class="chips">
+    <span class="chip">Influencer marketing</span><span class="chip">Deal discovery</span><span class="chip">Data pipelines</span>
+    <span class="chip">Matching</span><span class="chip">Outreach</span>
+  </div>
+  <div class="flow-wrap">
+    <div class="flow">
+      <div class="flow-cap">Finding the deals</div>
+      <div class="node"><div class="nt">Company signals</div><div class="ns">brands actively running campaigns</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Enrich &amp; score</div><div class="ns">fit, budget signals, category match</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Prioritised list</div><div class="ns">who to approach, with what angle</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Pitch</div><div class="ns">outreach aimed at live opportunities</div></div>
+    </div>
+    <div class="flow">
+      <div class="flow-cap">Finding the creators</div>
+      <div class="node"><div class="nt">Creator discovery</div><div class="ns">profiles filtered by niche &amp; audience</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Quality filter</div><div class="ns">engagement &amp; authenticity checks</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Match to brand</div><div class="ns">right creator for the right campaign</div></div>
+      <div class="arrow">↓</div>
+      <div class="node"><div class="nt">Campaign ready</div><div class="ns">shortlists in hours, not days</div></div>
+    </div>
+  </div>
+  <div class="results">
+    <div class="results-cap">Results</div>
+    <div class="result-grid">
+      <div class="result"><div class="rv">Faster</div><div class="rl">Shortlists built<br />in hours, not days</div></div>
+      <div class="result"><div class="rv">Better</div><div class="rl">Pitches aimed at<br />active deal-makers</div></div>
+      <div class="result"><div class="rv">Higher</div><div class="rl">Hit rate on<br />creator &amp; brand outreach</div></div>
+    </div>
+  </div>
+  <div class="case-body">
+    <p><strong>The outcome:</strong> the agency's team spends time closing instead of searching — the
+    pipeline finds the companies with live deals and the creators worth pitching, then hands over a
+    ranked shortlist.</p>
+  </div>
+  <div class="p-foot"><span>Witbitlabs.com</span><span class="num">08</span></div>
+</section>
+
+<!-- 09 · WHAT WE DO -->
+<section class="page">
+  <div class="p-head"><span>Witbit Labs / case studies</span><span>09</span></div>
+  <div class="kicker">[ Capabilities ]</div>
+  <h1 class="big">What we build</h1>
+  <div class="index-list">
+    <div class="index-row">
+      <span class="no">01</span>
+      <div><div class="t">AI workflow automation</div><div class="d">Agents that run triage, approvals, data entry, reporting and outreach — supervised, auditable, 24/7.</div></div>
+      <span class="tag">Agents</span>
+    </div>
+    <div class="index-row">
+      <span class="no">02</span>
+      <div><div class="t">System integrations</div><div class="d">CRM, ERP, email, spreadsheets and APIs wired together so data moves without a human touching it.</div></div>
+      <span class="tag">API</span>
+    </div>
+    <div class="index-row">
+      <span class="no">03</span>
+      <div><div class="t">Custom software &amp; internal tools</div><div class="d">Dashboards, portals and web apps built for how your operation actually works.</div></div>
+      <span class="tag">Build</span>
+    </div>
+    <div class="index-row">
+      <span class="no">04</span>
+      <div><div class="t">AI assistants &amp; chatbots</div><div class="d">Assistants trained on your business knowledge — supporting your team and customers around the clock.</div></div>
+      <span class="tag">Support</span>
+    </div>
+    <div class="index-row">
+      <span class="no">05</span>
+      <div><div class="t">Data &amp; reporting pipelines</div><div class="d">Collection, cleaning and visualisation on a schedule — decisions made on real numbers.</div></div>
+      <span class="tag">Data</span>
+    </div>
+    <div class="index-row">
+      <span class="no">06</span>
+      <div><div class="t">Process consulting</div><div class="d">Workflow audits that locate the biggest time sinks and the highest-ROI automation targets.</div></div>
+      <span class="tag">Strategy</span>
+    </div>
+  </div>
+  <div class="p-foot"><span>Witbitlabs.com</span><span class="num">09</span></div>
+</section>
+
+<!-- 10 · CLOSING -->
+<section class="page close">
+  <div class="p-head"><span>Witbit Labs / case studies</span><span>10</span></div>
+  <div>
+    <div class="kicker">[ Contact ]</div>
+    <h1>Let's automate<br />your business.</h1>
+    <p class="lede">
+      Tell us what's eating your team's time. We'll show you exactly how AI can eliminate it —
+      a free 30-minute discovery call, working software in weeks, no lengthy sales cycle.
+    </p>
+    <div class="close-grid">
+      <div class="close-block">
+        <div class="k">Email</div>
+        <div class="v">hello@witbitlabs.com</div>
+      </div>
+      <div class="close-block">
+        <div class="k">Website</div>
+        <div class="v">witbitlabs.com</div>
+      </div>
+      <div class="close-block">
+        <div class="k">Engagement</div>
+        <div class="v">Discovery <span>→ build</span> <span>→ launch</span> <span>→ optimize</span></div>
+      </div>
+      <div class="close-block">
+        <div class="k">Typical timeline</div>
+        <div class="v">Automations <span>1–2 weeks</span><br />Products <span>4–6 weeks</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="p-foot"><span>Witbitlabs.com</span><span class="num">10</span></div>
+</section>
+
+</body>
+</html>
