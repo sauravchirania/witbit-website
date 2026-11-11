@@ -228,7 +228,7 @@ em { font-style: normal; color: var(--muted); }
   display: flex; justify-content: space-between; align-items: center;
   padding-bottom: 34px; border-bottom: 1px solid var(--border); margin-bottom: 22px;
 }
-.footer-links { display: flex; gap: 26px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 10px 26px; }
 .footer-links a, .footer-bottom a {
   font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s;
 }
@@ -266,6 +266,14 @@ em { font-style: normal; color: var(--muted); }
   text-transform: uppercase; letter-spacing: 0.08em;
 }
 .cs-note strong { color: var(--fg); font-weight: 400; }
+.cs-pdf-link {
+  display: inline-block; margin-top: 16px;
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--fg); text-decoration: none;
+  border-bottom: 1px solid var(--border); padding-bottom: 5px;
+  transition: border-color 0.2s;
+}
+.cs-pdf-link:hover { border-color: var(--fg); }
 
 .cs-index { border-top: 1px solid var(--border); }
 .cs-index-row {
