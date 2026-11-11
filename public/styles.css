@@ -345,6 +345,19 @@ em { font-style: normal; color: var(--muted); }
 }
 .cs-close-email:hover { border-color: var(--fg); }
 
+/* CASE STUDY LOGOS */
+.cs-logo-wrap { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; margin: 0 0 22px 0; }
+.cs-logo { display: block; height: 26px; width: auto; }
+.cs-logo--jpeg { filter: grayscale(0.3); }
+
+/* HERO LOGO STRIP */
+.cs-logos { display: flex; align-items: center; gap: 30px; margin: 30px 0 0; flex-wrap: wrap; opacity: 0.5; }
+.cs-logos img { height: 24px; width: auto; display: block; }
+
+/* INDEX LOGO */
+.cs-index-logos { display: flex; flex-direction: column; gap: 3px; align-items: center; margin-bottom: 4px; }
+.cs-index-logos .cs-logo { height: 14px; width: auto; }
+
 /* REVEAL ON SCROLL */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -388,6 +401,7 @@ em { font-style: normal; color: var(--muted); }
   .cs-hero { padding: 120px 0 60px; }
   .cs-index-row { grid-template-columns: 44px 1fr; }
   .cs-index-tag { display: none; }
+  .cs-index-logos .cs-logo { height: 12px; width: auto; }
   .cs-impact { grid-template-columns: 1fr; }
   .cs-case { padding: 70px 0; }
   .cs-case-meta { padding-bottom: 30px; }
