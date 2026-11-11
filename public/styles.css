@@ -348,10 +348,10 @@ em { font-style: normal; color: var(--muted); }
 /* CASE STUDY LOGOS */
 .cs-logo-wrap { display: flex; align-items: center; gap: 14px; margin: 0 0 22px 0; }
 .cs-logo { display: block; height: 30px; width: auto; }
-.cs-logo--png { filter: brightness(0) invert(1); }
+.cs-logo--png { filter: grayscale(0.25); }
 
 /* HERO LOGO STRIP */
-.cs-logos { display: flex; align-items: center; gap: 26px; margin: 34px 0 0; flex-wrap: wrap; opacity: 0.45; }
+.cs-logos { display: flex; align-items: center; gap: 26px; margin: 34px 0 0; flex-wrap: wrap; opacity: 0.6; }
 .cs-logos img { height: 26px; width: auto; display: block; }
 
 /* INDEX LOGO */
