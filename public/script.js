@@ -7,18 +7,20 @@ onScroll();
 // Mobile menu toggle
 const toggle = document.querySelector(".menu-toggle");
 const links = document.querySelectorAll(".nav-links a");
-const openMenu = () => {
-  const open = !nav.classList.contains("menu-open");
-  nav.classList.toggle("menu-open", open);
-  document.body.style.overflow = open ? "hidden" : "";
-  toggle.setAttribute("aria-expanded", open);
-};
-toggle.addEventListener("click", openMenu);
-links.forEach((a) => a.addEventListener("click", () => {
-  nav.classList.remove("menu-open");
-  document.body.style.overflow = "";
-  toggle.setAttribute("aria-expanded", "false");
-}));
+if (toggle) {
+  const openMenu = () => {
+    const open = !nav.classList.contains("menu-open");
+    nav.classList.toggle("menu-open", open);
+    document.body.style.overflow = open ? "hidden" : "";
+    toggle.setAttribute("aria-expanded", open);
+  };
+  toggle.addEventListener("click", openMenu);
+  links.forEach((a) => a.addEventListener("click", () => {
+    nav.classList.remove("menu-open");
+    document.body.style.overflow = "";
+    toggle.setAttribute("aria-expanded", "false");
+  }));
+}
 
 // Reveal on scroll
 const observer = new IntersectionObserver(
@@ -47,7 +49,8 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 
 // Contact form
 const form = document.getElementById("contact-form");
-form.addEventListener("submit", async (e) => {
+if (form) {
+  form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const btn = form.querySelector(".submit-btn");
   const original = btn.innerHTML;
@@ -73,4 +76,5 @@ form.addEventListener("submit", async (e) => {
     btn.textContent = "Failed — email hello@witbitlabs.com";
     btn.disabled = false;
   }
-});
+  });
+}

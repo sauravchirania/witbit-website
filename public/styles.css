@@ -345,9 +345,19 @@ em { font-style: normal; color: var(--muted); }
 }
 .cs-close-email:hover { border-color: var(--fg); }
 
-/* HERO LOGO STRIP */
-.cs-logos { display: flex; align-items: center; gap: 34px; margin: 30px 0 0; flex-wrap: wrap; opacity: 0.5; }
-.cs-logos img { height: 40px; width: auto; display: block; }
+/* HERO LOGO CARDS */
+.cs-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+.cs-logos img {
+  width: 100%; height: auto; display: block;
+  border: 1px solid var(--border);
+  transition: border-color 0.25s;
+}
+.cs-logos img:hover { border-color: var(--muted); }
 
 /* REVEAL ON SCROLL */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
