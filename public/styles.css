@@ -350,6 +350,10 @@ em { font-style: normal; color: var(--muted); }
 .cs-logo { display: block; height: 30px; width: auto; }
 .cs-logo--png { filter: brightness(0) invert(1); }
 
+/* HERO LOGO STRIP */
+.cs-logos { display: flex; align-items: center; gap: 26px; margin: 34px 0 0; flex-wrap: wrap; opacity: 0.45; }
+.cs-logos img { height: 26px; width: auto; display: block; }
+
 /* INDEX LOGO */
 .cs-index .cs-logo { height: 18px; margin-right: 10px; }
 
