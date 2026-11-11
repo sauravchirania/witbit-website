@@ -347,13 +347,15 @@ em { font-style: normal; color: var(--muted); }
 
 /* HERO LOGO CARDS */
 .cs-logos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
   margin-top: 34px;
 }
 .cs-logos img {
-  width: 100%; height: auto; display: block;
+  width: calc((100% - 28px) / 3);
+  height: auto; display: block;
   border: 1px solid var(--border);
   transition: border-color 0.25s;
 }
@@ -400,6 +402,7 @@ em { font-style: normal; color: var(--muted); }
   .intro-meta-right { display: none; }
   .footer-top { flex-direction: column; align-items: flex-start; gap: 20px; }
   .cs-hero { padding: 120px 0 60px; }
+  .cs-logos img { width: calc((100% - 14px) / 2); }
   .cs-index-row { grid-template-columns: 44px 1fr; }
   .cs-index-tag { display: none; }
   .cs-impact { grid-template-columns: 1fr; }
