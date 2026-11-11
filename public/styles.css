@@ -369,7 +369,6 @@ em { font-style: normal; color: var(--muted); }
     padding: 10px 20px;
     width: auto;
     margin-top: 10px;
-    border-bottom: none;
     text-align: center;
   }
   .faq-layout, .contact-layout { grid-template-columns: 1fr; gap: 44px; }

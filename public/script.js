@@ -10,11 +10,13 @@ const links = document.querySelectorAll(".nav-links a");
 const openMenu = () => {
   const open = !nav.classList.contains("menu-open");
   nav.classList.toggle("menu-open", open);
+  document.body.style.overflow = open ? "hidden" : "";
   toggle.setAttribute("aria-expanded", open);
 };
 toggle.addEventListener("click", openMenu);
 links.forEach((a) => a.addEventListener("click", () => {
   nav.classList.remove("menu-open");
+  document.body.style.overflow = "";
   toggle.setAttribute("aria-expanded", "false");
 }));
 
