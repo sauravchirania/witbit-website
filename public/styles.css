@@ -61,13 +61,22 @@ em { font-style: normal; color: var(--muted); }
   background: none;
   border: 1px solid var(--border);
   color: var(--fg);
-  font-size: 1.1rem;
   cursor: pointer;
-  padding: 6px 10px;
+  padding: 8px 10px;
   line-height: 1;
   border-radius: 6px;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
 }
 .menu-toggle:focus { outline: 2px solid var(--fg); outline-offset: 2px; }
+.menu-bar {
+  display: block;
+  width: 20px; height: 2px;
+  background: var(--fg);
+  border-radius: 2px;
+}
+.menu-bar + .menu-bar { margin-top: 4px; }
 
 /* INTRO */
 .intro {
