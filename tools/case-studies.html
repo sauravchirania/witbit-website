@@ -75,6 +75,15 @@
     font-size: 8pt; letter-spacing: 0.5em; text-transform: uppercase;
     color: var(--muted); margin-top: 8mm;
   }
+  .cover-logos {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 3mm; margin-top: 16mm;
+  }
+  .cover-logos img {
+    width: calc((100% - 6mm) / 3);
+    height: auto; display: block;
+    border: 1px solid var(--border);
+  }
 
   /* ---------- SECTION LABELS ---------- */
   .kicker {
@@ -195,6 +204,13 @@
   <div>
     <div class="cover-title">Witbit<br />Labs</div>
     <div class="cover-sub">// selected experience · 01 — 04</div>
+    <div class="cover-logos">
+      <img src="../public/logos/uber.jpeg" alt="Uber" />
+      <img src="../public/logos/bmrcl.jpeg" alt="BMRCL" />
+      <img src="../public/logos/dmrc.jpeg" alt="DMRC" />
+      <img src="../public/logos/phonepe.jpeg" alt="PhonePe" />
+      <img src="../public/logos/tata%201mg.jpeg" alt="Tata 1mg" />
+    </div>
   </div>
   <div class="cover-meta">
     <span>Engineering<br />technology that<br />operates at scale</span>
