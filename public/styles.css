@@ -345,6 +345,14 @@ em { font-style: normal; color: var(--muted); }
 }
 .cs-close-email:hover { border-color: var(--fg); }
 
+/* CASE STUDY LOGOS */
+.cs-logo-wrap { display: flex; align-items: center; gap: 14px; margin: 0 0 22px 0; }
+.cs-logo { display: block; height: 30px; width: auto; }
+.cs-logo--png { filter: brightness(0) invert(1); }
+
+/* INDEX LOGO */
+.cs-index .cs-logo { height: 18px; margin-right: 10px; }
+
 /* REVEAL ON SCROLL */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
