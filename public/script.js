@@ -4,6 +4,20 @@ const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
+// Mobile menu toggle
+const toggle = document.querySelector(".menu-toggle");
+const links = document.querySelectorAll(".nav-links a");
+const openMenu = () => {
+  const open = !nav.classList.contains("menu-open");
+  nav.classList.toggle("menu-open", open);
+  toggle.setAttribute("aria-expanded", open);
+};
+toggle.addEventListener("click", openMenu);
+links.forEach((a) => a.addEventListener("click", () => {
+  nav.classList.remove("menu-open");
+  toggle.setAttribute("aria-expanded", "false");
+}));
+
 // Reveal on scroll
 const observer = new IntersectionObserver(
   (entries) => {
