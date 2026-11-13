@@ -88,6 +88,7 @@ em { font-style: normal; color: var(--muted); }
   display: flex; justify-content: space-between;
   font-size: 0.8rem; color: var(--muted); text-transform: uppercase; line-height: 1.7;
 }
+.intro .container { width: 100%; }
 .intro-meta-right { text-align: right; }
 .intro-title {
   font-size: clamp(4.5rem, 17vw, 15rem);
@@ -411,7 +412,6 @@ em { font-style: normal; color: var(--muted); }
   .faq-layout, .contact-layout { grid-template-columns: 1fr; gap: 44px; }
   .statement { margin-bottom: 64px; }
   .section { padding: 70px 0; }
-  .intro-meta-right { display: none; }
   .footer-top { flex-direction: column; align-items: flex-start; gap: 20px; }
   .cs-hero { padding: 120px 0 60px; }
   .cs-logos img { width: calc((100% - 14px) / 2); }
