@@ -36,6 +36,7 @@ em { font-style: normal; color: var(--muted); }
   backdrop-filter: blur(12px);
   border-color: var(--border);
 }
+.nav.menu-open { backdrop-filter: none; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .logo {
   display: flex; align-items: center; gap: 10px;
