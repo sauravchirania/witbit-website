@@ -8,18 +8,23 @@ onScroll();
 const toggle = document.querySelector(".menu-toggle");
 const links = document.querySelectorAll(".nav-links a");
 if (toggle) {
-  const openMenu = () => {
-    const open = !nav.classList.contains("menu-open");
+  const setMenu = (open) => {
     nav.classList.toggle("menu-open", open);
     document.body.style.overflow = open ? "hidden" : "";
-    toggle.setAttribute("aria-expanded", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Toggle menu");
   };
-  toggle.addEventListener("click", openMenu);
-  links.forEach((a) => a.addEventListener("click", () => {
-    nav.classList.remove("menu-open");
-    document.body.style.overflow = "";
-    toggle.setAttribute("aria-expanded", "false");
-  }));
+  toggle.addEventListener("click", () => setMenu(!nav.classList.contains("menu-open")));
+  links.forEach((a) => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("menu-open")) setMenu(false);
+  });
+  const menu = document.querySelector(".nav-links");
+  if (menu) {
+    menu.addEventListener("click", (e) => {
+      if (e.target === menu && nav.classList.contains("menu-open")) setMenu(false);
+    });
+  }
 }
 
 // Reveal on scroll
